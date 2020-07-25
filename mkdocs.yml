@@ -1,4 +1,4 @@
-site_name: FastAPI CamelCase
+site_name: FastAPI Databases
 nav:
   - Getting Started: index.md
   - Install: install.md
