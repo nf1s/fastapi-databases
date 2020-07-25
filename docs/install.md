@@ -1,17 +1,17 @@
 ## Using Pip
 
 ```bash
-pip install fastapi-camelcase
+pip install fastapi-databases
 ```
 
 ## Using Pipenv
 
 ```bash
-pipenv install fastapi-camelcase
+pipenv install fastapi-databases
 ```
 
 ## Using poetry
 
 ```bash
-poetry add fastapi-camelcase
+poetry add fastapi-databases
 ```

@@ -3,10 +3,10 @@
 ```python
 import uvicorn
 from fastapi import FastAPI
-from fastapi_camelcase import CamelModel
+from fastapi_databases import Database
+from pydantic import BaseModel
 
-
-class User(CamelModel):
+class User(BaseModel):
     first_name: str
     last_name: str
     age: int

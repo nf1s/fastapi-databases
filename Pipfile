@@ -12,7 +12,6 @@ pygments = "*"
 pydantic = "*"
 fastapi = "*"
 pytest = "*"
-databases = "*"
 coverage = "*"
 twine = "*"
 uvicorn = "*"
@@ -20,6 +19,9 @@ mkdocs = "*"
 mkdocs-material = "*"
 mypy = "*"
 jeepney = ">=0.4.2"
+alembic = "*"
+python-dotenv = "*"
+databases = {extras = ["postgresql"], version = "*"}
 
 [requires]
 python_version = "3.7"

@@ -17,3 +17,15 @@ deploy-docs:
 
 serve-docs:
 	pipenv run mkdocs serve
+
+makemigrations:
+	pipenv run alembic revision --autogenerate
+
+migrate:
+	pipenv run alembic upgrade head
+
+shell:
+	pipenv run ipython
+
+run:
+	pipenv run python main.py

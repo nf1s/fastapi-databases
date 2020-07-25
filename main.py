@@ -4,26 +4,32 @@
 """
 import uvicorn
 from fastapi import FastAPI
-from fastapi_camelcase import CamelModel
+from pydantic import BaseModel
+from models import db, User as ModelUser
 
 
-class User(CamelModel):
+class SchemaUser(BaseModel):
     first_name: str
     last_name: str
     age: int
+    email: str
 
 
 app = FastAPI()
 
-
-@app.get("/user/get", response_model=User)
-async def get_user():
-    return User(first_name="John", last_name="Doe", age=30)
+db.init_app(app)
 
 
-@app.post("/user/create", response_model=User)
-async def create_user(user: User):
-    return user
+@app.post("/user/")
+async def create_user(user: SchemaUser):
+    user_id = await ModelUser.create(**user.dict())
+    return {"user_id": user_id}
+
+
+@app.get("/user/{id}", response_model=SchemaUser)
+async def get_user(id: int):
+    user = await ModelUser.get(id)
+    return SchemaUser(**user).dict()
 
 
 if __name__ == "__main__":
