@@ -1,0 +1,11 @@
+site_name: FastAPI CamelCase
+nav:
+  - Getting Started: index.md
+  - Install: install.md
+  - Full Example: example.md
+theme:
+  name: "material"
+  palette:
+    primary: "green"
+markdown_extensions:
+  - codehilite
