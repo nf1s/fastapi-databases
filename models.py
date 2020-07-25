@@ -1,11 +1,5 @@
-from fastapi_databases import FastAPIDatabases, sqlalchemy
-import os
-from dotenv import load_dotenv
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-load_dotenv(os.path.join(BASE_DIR, ".env"))
-
-db = FastAPIDatabases(os.environ["DATABASE_URL"])
+from fastapi_databases import sqlalchemy
+from db import db
 
 users = sqlalchemy.Table(
     "users",
@@ -14,7 +8,6 @@ users = sqlalchemy.Table(
     sqlalchemy.Column("first_name", sqlalchemy.String),
     sqlalchemy.Column("last_name", sqlalchemy.String),
     sqlalchemy.Column("age", sqlalchemy.Integer),
-    sqlalchemy.Column("email", sqlalchemy.String),
 )
 
 

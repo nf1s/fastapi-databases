@@ -21,7 +21,7 @@ mypy = "*"
 jeepney = ">=0.4.2"
 alembic = "*"
 python-dotenv = "*"
-databases = {extras = ["postgresql"], version = "*"}
+databases = {extras = ["postgresql", "mysql", "sqlite"], version = "*"}
 
 [requires]
 python_version = "3.7"

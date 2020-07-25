@@ -12,7 +12,6 @@ class SchemaUser(BaseModel):
     first_name: str
     last_name: str
     age: int
-    email: str
 
 
 app = FastAPI()
